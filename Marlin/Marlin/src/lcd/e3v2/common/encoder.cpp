@@ -75,7 +75,7 @@ void Encoder_Configuration() {
   #endif
 }
 
-// Analyze encoder value and return state
+// Analyze encoder value and return state !TODO MBY
 EncoderState Encoder_ReceiveAnalyze() {
   const millis_t now = millis();
   static uint8_t lastEncoderBits;
