@@ -933,7 +933,7 @@
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 100, 100, 400, 93 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 100, 100, 400, 92.5 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -1185,20 +1185,20 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -18, 0, -2.2 } //negative number nossle closer to the bed
+#define NOZZLE_TO_PROBE_OFFSET { -21, -2.1, -4.2 } //negative number nossle closer to the bed
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
 #define PROBING_MARGIN 15
 
 // X and Y axis travel speed (mm/min) between probes   !!!!TODO
-#define XY_PROBE_FEEDRATE (133*60*2)
+#define XY_PROBE_FEEDRATE (133*60*1.5)
 
 // Feedrate (mm/min) for the first approach when double-probing (MULTIPLE_PROBING == 2)
-#define Z_PROBE_FEEDRATE_FAST (4*60)
+#define Z_PROBE_FEEDRATE_FAST (4*60+20)
 
 // Feedrate (mm/min) for the "accurate" probe of each point
-#define Z_PROBE_FEEDRATE_SLOW (Z_PROBE_FEEDRATE_FAST / 2)
+#define Z_PROBE_FEEDRATE_SLOW ((Z_PROBE_FEEDRATE_FAST-20)/ 2)
 
 /**
  * Probe Activation Switch
@@ -1384,8 +1384,8 @@
 // @section machine
 
 // The size of the printable area
-#define X_BED_SIZE 225
-#define Y_BED_SIZE 225
+#define X_BED_SIZE 235
+#define Y_BED_SIZE 235
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
